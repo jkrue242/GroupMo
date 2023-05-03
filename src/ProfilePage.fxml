@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfilePageController">
+   <children>
+      <VBox layoutX="-2.0" layoutY="-2.0" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <HBox>
+               <children>
+                  <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#signOutButtonPressed" prefHeight="26.0" prefWidth="110.0" text="Sign Out" />
+                  <MenuButton fx:id="notificationsDropDown" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Notifications">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                     <HBox.margin>
+                        <Insets left="182.0" />
+                     </HBox.margin>
+                  </MenuButton>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" textAlignment="CENTER" wrappingWidth="400.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <Line endX="300.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Line>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Balance:" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="85.0" top="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="amountText" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" wrappingWidth="145.0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Region prefHeight="150.0" prefWidth="200.0" />
+                  <VBox>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                     <children>
+                        <TextField fx:id="depositTextField" alignment="CENTER" promptText="\$.$$">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="depositButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#depositButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Deposit">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="150.0" prefWidth="150.0" />
+                  <VBox>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                     <children>
+                        <TextField fx:id="withdrawTextField" alignment="CENTER" promptText="\$.$$">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="withdrawButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#withdrawButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Withdraw">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="150.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <Line endX="300.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Line>
+            <HBox prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox minHeight="-Infinity" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Friends List" textAlignment="CENTER" wrappingWidth="200.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ScrollPane fx:id="friendsListPane" prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ListView fx:id="friendsListView" prefHeight="156.0" prefWidth="200.0" />
+                                 </children></AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox minHeight="-Infinity" prefHeight="200.0" prefWidth="213.0">
+                     <children>
+                        <TextField fx:id="addFriendTextField" alignment="CENTER" depthTest="ENABLE" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Username">
+                           <VBox.margin>
+                              <Insets left="50.0" right="50.0" top="40.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="addFriendButton" mnemonicParsing="false" onAction="#addFriendButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Add Friend">
+                           <VBox.margin>
+                              <Insets left="50.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <TextField fx:id="removeFriendTextField" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" promptText="Username">
+                           <VBox.margin>
+                              <Insets left="50.0" right="50.0" top="25.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="removeFriendButton" mnemonicParsing="false" onAction="#removeFriendButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Remove Friend">
+                           <VBox.margin>
+                              <Insets left="50.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Line endX="300.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Line>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="payButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#payButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Pay/Request">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Region prefHeight="200.0" prefWidth="150.0" />
+                  <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#homeButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Home">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <Text fx:id="bottomNotification" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="400.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

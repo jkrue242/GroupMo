@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupPageController">
+    <children>
+        <VBox prefHeight="600.0" prefWidth="400.0">
+            <children>
+            <Pane prefHeight="250.0" prefWidth="401.0">
+               <children>
+                  <Ellipse fill="DODGERBLUE" layoutX="197.0" layoutY="76.0" radiusX="152.0" radiusY="68.0" stroke="BLACK" strokeType="INSIDE" />
+                      <Text layoutX="-13.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group Feed" textAlignment="CENTER" wrappingWidth="399.8837890625">
+                          <font>
+                              <Font size="30.0" />
+                          </font>
+                      </Text>
+                  <Text layoutX="70.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GroupMo">
+                     <font>
+                        <Font size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="notifications" fill="#f20606" layoutX="11.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="371.7294921875" />
+               </children>
+            </Pane>
+                <Line endX="300.0" startX="-100.0" />
+                <MenuButton fx:id="chooseGroupButton" mnemonicParsing="false" text="Filter" />
+                <Line endX="300.0" startX="-100.0">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Line>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="groupIDText" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group: " wrappingWidth="172.70263671875">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="groupMembersText" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members: ">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Text>
+                  <Text fx:id="balanceText" layoutX="215.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance: ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="leaveGroupButton" layoutX="286.0" layoutY="120.0" mnemonicParsing="false" onAction="#leaveButtonGroupClicked" text="Leave Group" />
+                  <Text fx:id="groupNameText" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group Name: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+                <Region prefHeight="100.0" prefWidth="401.0" />
+                <HBox prefHeight="171.0" prefWidth="272.0">
+                    <children>
+                        <Region prefHeight="84.0" prefWidth="20.0" />
+                        <Region prefHeight="107.0" prefWidth="35.0" />
+                        <Button fx:id="groupsButton" mnemonicParsing="false" onAction="#FormGroupButtonClicked" prefHeight="60.0" prefWidth="120.0" text="Manage Group" />
+                  <Region prefHeight="112.0" prefWidth="20.0" />
+                        <Region prefHeight="50.0" prefWidth="20.0" />
+                        <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonClicked" prefHeight="60.0" prefWidth="120.0" text="Home" />
+                  <Region prefHeight="59.0" prefWidth="28.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
